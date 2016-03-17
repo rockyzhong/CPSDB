@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_sys_GetQuestionablePolicy]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 175
+END
+GO

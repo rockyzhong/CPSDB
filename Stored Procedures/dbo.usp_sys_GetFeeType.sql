@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_sys_GetFeeType]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 125
+END
+GO

@@ -1,0 +1,11 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[usp_sys_GetMachineStatus]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 179
+END
+GO

@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_dev_DeleteCokeDevice]
+	@MerchantId NVARCHAR(15),
+	@TerminalName NVARCHAR(16)
+	AS
+    BEGIN
+	UPDATE dbo.tbl_DeviceCoke SET INDICATORS= 0 WHERE MERCID=@MerchantId AND TERMID=@TerminalName
+    END
+GO

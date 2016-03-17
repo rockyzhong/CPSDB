@@ -1,0 +1,3 @@
+CREATE ROLE [Settlement_Role]
+AUTHORIZATION [dbo]
+GO

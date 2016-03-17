@@ -1,0 +1,43 @@
+CREATE TABLE [dbo].[tbl_BINRangeFile]
+(
+[Id] [bigint] NOT NULL IDENTITY(1, 2) NOT FOR REPLICATION,
+[FileName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Priority] [bigint] NULL,
+[RowTerminator] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FirstRow] [bigint] NULL,
+[CountryNumberCode] [bigint] NULL,
+[BINValStart1] [bigint] NULL,
+[BINValStart2] [bigint] NULL,
+[BINValStart3] [bigint] NULL,
+[BINValLength] [bigint] NULL,
+[BINLenStart1] [bigint] NULL,
+[BINLenStart2] [bigint] NULL,
+[BINLenStart3] [bigint] NULL,
+[BINLenLength] [bigint] NULL,
+[PANLenStart1] [bigint] NULL,
+[PANLenStart2] [bigint] NULL,
+[PANLenStart3] [bigint] NULL,
+[PANLenLength] [bigint] NULL,
+[CountryCodeStart1] [bigint] NULL,
+[CountryCodeStart2] [bigint] NULL,
+[CountryCodeStart3] [bigint] NULL,
+[CountryCodeLength] [bigint] NULL,
+[CountryCode] [nvarchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[NetworkIDStart] [bigint] NULL,
+[NetworkIDLength] [bigint] NULL,
+[NetworkID] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CreditDebitFlag] [bigint] NULL,
+[CreditFlagStart] [bigint] NULL,
+[CreditFlagLength] [bigint] NULL,
+[DebitFlagStart] [bigint] NULL,
+[DebitFlagLength] [bigint] NULL,
+[TransactionTypeList] [nvarchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ATMFlagStart] [bigint] NULL,
+[ATMFlagLength] [bigint] NULL,
+[POSFlagStart] [bigint] NULL,
+[POSFlagLength] [bigint] NULL,
+[UpdatedUserId] [bigint] NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[tbl_BINRangeFile] ADD CONSTRAINT [pk_BINRangeFile] PRIMARY KEY NONCLUSTERED  ([Id]) ON [PRIMARY]
+GO

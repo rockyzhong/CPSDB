@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+CREATE PROCEDURE [dbo].[usp_sys_GetProtocolType]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 151
+END
+GO

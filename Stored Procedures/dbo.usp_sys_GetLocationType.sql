@@ -1,0 +1,11 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[usp_sys_GetLocationType]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 173
+END
+GO

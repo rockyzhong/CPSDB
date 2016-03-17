@@ -1,0 +1,42 @@
+CREATE TABLE [dbo].[tbl_rec_TransactionMoneris]
+(
+[DateTimeSettlement] [datetime] NOT NULL,
+[CurrencyCode] [smallint] NOT NULL,
+[TerminalID] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[TraceNum] [int] NOT NULL,
+[RefNum] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DateTimeTerminalEvent] [datetime] NOT NULL,
+[PAN] [varchar] (19) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[MsgType] [int] NOT NULL,
+[PCode] [int] NOT NULL,
+[CondCode] [smallint] NOT NULL,
+[AccNo1] [varchar] (19) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AccNo2] [varchar] (19) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AmountRequested] [money] NOT NULL,
+[AmountAuthorized] [money] NOT NULL,
+[AmountSettlement] [money] NOT NULL,
+[AmountInterchange] [money] NOT NULL,
+[SwitchNo] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[ReceiptDate] [char] (4) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[IssProcessorID] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[IssInstitutionID] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AcqProcessorID] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AcqInstitutionID] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[ABMLocation] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[RespCode] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[CompCode] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[ConvRate] [money] NOT NULL,
+[ProcFee] [money] NOT NULL,
+[Settled] [char] (1) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AcqNetCode] [char] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[IssNetCode] [char] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AmountOrig] [money] NULL,
+[AmountNew] [money] NULL,
+[AmountRevDebit] [money] NULL,
+[AmountRevCredit] [money] NULL,
+[OrigMsgType] [int] NULL,
+[OrigDataElements] [varchar] (36) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[tbl_rec_TransactionMoneris] ADD CONSTRAINT [pk_tbl_rec_TransactionMoneris] PRIMARY KEY CLUSTERED  ([DateTimeSettlement], [CurrencyCode], [TerminalID], [TraceNum], [RefNum], [DateTimeTerminalEvent], [PAN], [MsgType]) ON [PRIMARY]
+GO

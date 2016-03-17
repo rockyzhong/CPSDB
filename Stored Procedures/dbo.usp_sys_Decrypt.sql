@@ -1,0 +1,19 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_sys_Decrypt] (@Data varbinary(max),@Value nvarchar(max) OUTPUT)
+AS
+BEGIN
+  SET @Value=CONVERT(nvarchar(max),DECRYPTBYKEY(@Data))
+  IF @Value IS NULL
+  BEGIN
+  --  OPEN SYMMETRIC KEY sk_EncryptionKey DECRYPTION BY CERTIFICATE ec_EncryptionCert
+    OPEN SYMMETRIC KEY SymKey_SPS_20150825 DECRYPTION BY ASYMMETRIC KEY AsymKey_SPS_20150825 
+    SET @Value=CONVERT(nvarchar(max),DECRYPTBYKEY(@Data))
+	CLOSE SYMMETRIC KEY SymKey_SPS_20150825
+  END
+END
+GO
+GRANT EXECUTE ON  [dbo].[usp_sys_Decrypt] TO [WebV4Role]
+GO

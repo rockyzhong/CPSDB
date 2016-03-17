@@ -1,0 +1,5 @@
+CREATE ROLE [SAV4Role]
+AUTHORIZATION [dbo]
+GO
+EXEC sp_addrolemember N'SAV4Role', N'SAV4'
+GO

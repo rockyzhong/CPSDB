@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+CREATE PROCEDURE [dbo].[usp_sys_GetActivityStatus]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 183
+END
+GO

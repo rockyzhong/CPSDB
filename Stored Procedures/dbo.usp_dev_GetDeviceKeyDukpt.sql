@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_dev_GetDeviceKeyDukpt]
+@SerialNum NVARCHAR(11)
+AS
+BEGIN
+  IF NOT EXISTS (SELECT Id FROM dbo.tbl_DeviceKeyDukpt WHERE SerialNum=@SerialNum) 
+  RETURN 0
+  ELSE 
+  RETURN 1
+END
+GO

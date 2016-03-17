@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+CREATE PROCEDURE [dbo].[usp_sys_GetDeviceEmulation]
+AS
+BEGIN
+  EXEC dbo.usp_sys_GetTypeValues 131
+END
+GO
